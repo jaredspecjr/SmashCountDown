@@ -1,5 +1,6 @@
 import React, { PropTypes, Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import image from "../assets/images/smash.png";
 
 class App extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class App extends Component {
       days: 0,
       hours: 0,
       mins: 0,
+      sec: 0,
     };
   }
 
@@ -59,12 +61,47 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
-        <div>
-          <p>{this.state.days}</p>
-          <p>{this.state.hours}</p>
-          <p>{this.state.mins}</p>
+      <div className="app">
+        <div className ="head">
+          <img className="image" src={image} />
         </div>
+        <div>
+          <h1>Count Down</h1>
+        </div>
+        <div className="timer">
+          <p>{this.state.days} Days</p>
+          <p>{this.state.hours} Hrs</p>
+          <p>{this.state.mins} Mins</p>
+          <p>{this.state.sec} Sec</p>
+        </div>
+        <style jsx>{`
+          .app {
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            margin: -8px;
+            margin-top:-21px;
+            padding-top: 50px;
+            padding: 15px;
+          }
+          .timer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: -50px;
+            padding: 20px;
+          }
+          .image {
+            width: 100%;
+          }
+          .head {
+            margin: -50px;
+          }
+
+      `}</style>
       </div>
     );
   }
