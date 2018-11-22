@@ -93,6 +93,7 @@ class App extends Component {
             justify-content: space-around;
             margin-top: -50px;
             padding: 20px;
+            border: 10px solid black;
           }
           .image {
             width: 100%;
